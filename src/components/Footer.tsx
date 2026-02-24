@@ -14,7 +14,7 @@ export default function Footer() {
         className="font-extrabold leading-none tracking-tight mb-14"
         style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)" }}
       >
-        <span style={{ color: "var(--text-ghost)" }}>Let&apos;s build something </span>
+        <span className="text-ghost">Let&apos;s build something </span>
         <span className="gradient-text">worth using.</span>
       </p>
 
@@ -22,9 +22,9 @@ export default function Footer() {
       <div className="divider mb-5" />
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <span
+          className="text-muted"
           style={{
             fontSize: 9.5,
-            color: "var(--text-muted)",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
           }}

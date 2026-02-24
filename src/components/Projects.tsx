@@ -59,10 +59,7 @@ export default function Projects() {
               <div className="flex flex-col flex-1 p-8 gap-5">
                 {/* Year + impact — small top row */}
                 <div className="flex items-center justify-between">
-                  <span
-                    className="text-[10px] font-semibold uppercase tracking-[0.2em]"
-                    style={{ color: "var(--text-muted)" }}
-                  >
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted">
                     {project.year}
                   </span>
                   <span
@@ -79,27 +76,18 @@ export default function Projects() {
 
                 {/* Title */}
                 <div className="flex-1">
-                  <p
-                    className="text-[11px] font-medium uppercase tracking-widest mb-2"
-                    style={{ color: "var(--text-muted)" }}
-                  >
+                  <p className="text-[11px] font-medium uppercase tracking-widest mb-2 text-muted">
                     {project.tagline}
                   </p>
                   <h3
-                    className="font-bold leading-tight transition-colors duration-300"
+                    className="font-bold leading-tight transition-colors duration-300 text-primary"
                     style={{
                       fontSize: "clamp(1.35rem, 2.5vw, 1.75rem)",
-                      color: "var(--text-primary)",
                     }}
                   >
                     {project.title}
                   </h3>
-                  <p
-                    className="text-sm leading-relaxed flex-1"
-                    style={{ color: "var(--text-secondary)" }}
-                  >
-                    {project.desc}
-                  </p>
+                  <p className="text-sm leading-relaxed flex-1 text-secondary">{project.desc}</p>
                 </div>
 
                 {/* Tags */}
@@ -109,8 +97,7 @@ export default function Projects() {
                     return (
                       <span
                         key={tag.name}
-                        className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                        style={{ color: "var(--text-muted)", border: "1px solid var(--border)" }}
+                        className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full text-muted border-token"
                       >
                         {Icon && <Icon style={{ color: tag.color, fontSize: 11 }} aria-hidden />}
                         {tag.name}
@@ -120,10 +107,7 @@ export default function Projects() {
                 </div>
 
                 {/* Hover arrow */}
-                <div
-                  className="flex items-center gap-2 text-[11px] font-semibold tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
-                  style={{ color: "var(--text-secondary)" }}
-                >
+                <div className="flex items-center gap-2 text-[11px] font-semibold tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1 text-secondary">
                   View case study
                   <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">
                     →

@@ -77,19 +77,19 @@ export default function Contact() {
             transition={{ duration: 0.8, ease }}
           >
             <p
-              className="font-semibold leading-snug"
-              style={{ fontSize: "clamp(1.05rem, 2vw, 1.35rem)", color: "var(--text-primary)" }}
+              className="font-semibold leading-snug text-primary"
+              style={{ fontSize: "clamp(1.05rem, 2vw, 1.35rem)" }}
             >
               Selective about what I take on next. Open to the right engineering problem.
             </p>
             <div className="mt-10 space-y-5">
               <p
+                className="text-label"
                 style={{
                   fontSize: 10,
                   fontWeight: 700,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  color: "var(--text-label)",
                 }}
               >
                 Direct
@@ -100,9 +100,8 @@ export default function Contact() {
                   display: "block",
                   fontSize: "clamp(0.85rem, 1.4vw, 0.95rem)",
                   fontWeight: 500,
-                  color: "var(--text-secondary)",
                 }}
-                className="transition-colors duration-300"
+                className="text-secondary hover:text-primary transition-colors duration-300"
               >
                 {PERSONAL.email}
               </a>
@@ -115,8 +114,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="transition-colors duration-300"
-                    style={{ color: "var(--text-muted)" }}
+                    className="text-muted hover:text-primary transition-colors duration-300"
                   >
                     {SOCIAL_ICONS[s.icon]}
                   </a>
@@ -138,13 +136,13 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <div style={{ fontSize: "2.5rem", fontWeight: 900, color: "var(--text-ghost)" }}>
+                <div className="text-ghost" style={{ fontSize: "2.5rem", fontWeight: 900 }}>
                   ✓
                 </div>
-                <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--text-primary)" }}>
+                <h3 className="text-primary" style={{ fontSize: "1.25rem", fontWeight: 700 }}>
                   Message received.
                 </h3>
-                <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)" }}>
+                <p className="text-secondary" style={{ fontSize: "0.9rem" }}>
                   I'll follow up within 48 hours.
                 </p>
               </motion.div>
@@ -153,13 +151,12 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
-                      className="block mb-2"
+                      className="block mb-2 text-label"
                       style={{
                         fontSize: 10,
                         fontWeight: 700,
                         letterSpacing: "0.2em",
                         textTransform: "uppercase",
-                        color: "var(--text-label)",
                       }}
                     >
                       Name
@@ -168,13 +165,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <label
-                      className="block mb-2"
+                      className="block mb-2 text-label"
                       style={{
                         fontSize: 10,
                         fontWeight: 700,
                         letterSpacing: "0.2em",
                         textTransform: "uppercase",
-                        color: "var(--text-label)",
                       }}
                     >
                       Email
@@ -184,13 +180,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <label
-                    className="block mb-2"
+                    className="block mb-2 text-label"
                     style={{
                       fontSize: 10,
                       fontWeight: 700,
                       letterSpacing: "0.2em",
                       textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.42)",
                     }}
                   >
                     Message

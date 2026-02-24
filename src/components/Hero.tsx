@@ -30,17 +30,14 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease }}
             >
-              <span className="block" style={{ color: "var(--text-primary)" }}>
-                {PERSONAL.headline[0]}
-              </span>
+              <span className="block text-primary">{PERSONAL.headline[0]}</span>
               <span className="block gradient-text">{PERSONAL.headline[1]}</span>
             </motion.h1>
 
             <motion.p
-              className="mt-8 md:mt-10 leading-relaxed"
+              className="mt-8 md:mt-10 leading-relaxed text-secondary"
               style={{
                 fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)",
-                color: "var(--text-secondary)",
                 maxWidth: 460,
               }}
               initial={{ opacity: 0 }}
@@ -81,8 +78,8 @@ export default function Hero() {
                     <span className="gradient-text">{s.value}</span>
                   </div>
                   <div
-                    className="mt-1 font-semibold uppercase"
-                    style={{ fontSize: 9, letterSpacing: "0.22em", color: "var(--text-muted)" }}
+                    className="mt-1 font-semibold uppercase text-muted"
+                    style={{ fontSize: 9, letterSpacing: "0.22em" }}
                   >
                     {s.label}
                   </div>

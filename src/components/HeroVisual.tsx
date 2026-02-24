@@ -4,28 +4,7 @@ import { motion } from "framer-motion";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const cardShell: React.CSSProperties = {
-  background: "var(--glass-bg)",
-  border: "1px solid var(--border-mid)",
-  backdropFilter: "blur(18px)",
-  WebkitBackdropFilter: "blur(18px)",
-  borderRadius: 14,
-  padding: "20px 24px",
-  fontFamily: "'Outfit', system-ui, sans-serif",
-  boxSizing: "border-box",
-};
-
-const eyebrow: React.CSSProperties = {
-  fontSize: 9,
-  fontWeight: 700,
-  letterSpacing: "0.2em",
-  textTransform: "uppercase",
-  color: "var(--eyebrow-color)",
-  marginBottom: 14,
-  display: "block",
-};
-
-// ── Stack card — tech I actually use ─────────────────────────
+//------- Stack card - tech I actually use --------
 function StackCard() {
   const stack = [
     { name: "React / Next.js", tag: "App layer", color: "#61DAFB" },
@@ -34,8 +13,8 @@ function StackCard() {
     { name: "Redux Toolkit", tag: "State", color: "#764abc" },
   ];
   return (
-    <div style={cardShell}>
-      <span style={eyebrow}>Core Stack</span>
+    <div className="card-shell">
+      <span className="card-eyebrow">Core Stack</span>
       {stack.map((s) => (
         <div
           key={s.name}
@@ -57,14 +36,14 @@ function StackCard() {
                 flexShrink: 0,
               }}
             />
-            <span style={{ fontSize: 11, color: "var(--text-primary)", fontWeight: 500 }}>
+            <span className="text-primary" style={{ fontSize: 11, fontWeight: 500 }}>
               {s.name}
             </span>
           </div>
           <span
+            className="text-muted"
             style={{
               fontSize: 9.5,
-              color: "var(--text-muted)",
               fontFamily: "'Courier New', monospace",
             }}
           >
@@ -84,8 +63,8 @@ function MetricsCard() {
     { label: "Sprint delta", value: "↑ 20%", color: "#a78bfa" },
   ];
   return (
-    <div style={cardShell}>
-      <span style={eyebrow}>Impact</span>
+    <div className="card-shell">
+      <span className="card-eyebrow">Impact</span>
       {metrics.map((m) => (
         <div
           key={m.label}
@@ -96,7 +75,9 @@ function MetricsCard() {
             marginBottom: 11,
           }}
         >
-          <span style={{ fontSize: 10.5, color: "var(--text-secondary)" }}>{m.label}</span>
+          <span className="text-secondary" style={{ fontSize: 10.5 }}>
+            {m.label}
+          </span>
           <span
             style={{
               fontSize: 11,
@@ -122,8 +103,8 @@ function ActivityCard() {
     { type: "arch", msg: "GraphQL schema + caching layer", color: "#a78bfa" },
   ];
   return (
-    <div style={cardShell}>
-      <span style={eyebrow}>Recent work</span>
+    <div className="card-shell">
+      <span className="card-eyebrow">Recent work</span>
       {items.map((item, i) => (
         <div key={i} style={{ display: "flex", gap: 9, alignItems: "flex-start", marginBottom: 8 }}>
           <span
@@ -142,7 +123,7 @@ function ActivityCard() {
           >
             {item.type}
           </span>
-          <span style={{ fontSize: 10.5, color: "var(--text-secondary)", lineHeight: 1.4 }}>
+          <span className="text-secondary" style={{ fontSize: 10.5, lineHeight: 1.4 }}>
             {item.msg}
           </span>
         </div>
@@ -154,8 +135,8 @@ function ActivityCard() {
 // ── Status card — availability indicator ─────────────────────
 function StatusCard() {
   return (
-    <div style={cardShell}>
-      <span style={eyebrow}>Status</span>
+    <div className="card-shell">
+      <span className="card-eyebrow">Status</span>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
         <div
           style={{
@@ -167,7 +148,7 @@ function StatusCard() {
             flexShrink: 0,
           }}
         />
-        <span style={{ fontSize: 11, color: "var(--text-primary)", fontWeight: 600 }}>
+        <span className="text-primary" style={{ fontSize: 11, fontWeight: 600 }}>
           Open to opportunities
         </span>
       </div>
@@ -180,9 +161,9 @@ function StatusCard() {
         ].map((r) => (
           <div key={r.label}>
             <p
+              className="text-ghost"
               style={{
                 fontSize: 8.5,
-                color: "var(--text-ghost)",
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
@@ -191,7 +172,7 @@ function StatusCard() {
             >
               {r.label}
             </p>
-            <p style={{ fontSize: 10, color: "var(--text-secondary)", fontWeight: 500 }}>
+            <p className="text-secondary" style={{ fontSize: 10, fontWeight: 500 }}>
               {r.value}
             </p>
           </div>

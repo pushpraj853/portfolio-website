@@ -49,35 +49,25 @@ export default function Approach() {
               <div className="py-9 md:py-12 flex flex-col md:grid md:grid-cols-[90px_1fr_2fr] gap-4 md:gap-12 items-start">
                 {/* Large index — brighter so it's readable at low brightness */}
                 <span
-                  className="font-black leading-none select-none"
-                  style={{
-                    fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                    color: "var(--text-ghost)",
-                    transition: "color 0.5s ease",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-ghost)")}
+                  className="font-black leading-none select-none text-ghost hover:text-muted transition-colors duration-500"
+                  style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
                 >
                   {formatNumber(index + 1)}
                 </span>
 
                 {/* Title */}
                 <h3
-                  className="font-bold leading-snug transition-colors duration-300"
-                  style={{
-                    fontSize: "clamp(1.15rem, 2.5vw, 1.55rem)",
-                    color: "var(--text-primary)",
-                  }}
+                  className="font-bold leading-snug transition-colors duration-300 text-primary"
+                  style={{ fontSize: "clamp(1.15rem, 2.5vw, 1.55rem)" }}
                 >
                   {item.title}
                 </h3>
 
                 {/* Body */}
                 <p
-                  className="leading-relaxed"
+                  className="leading-relaxed text-secondary"
                   style={{
                     fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
-                    color: "var(--text-secondary)",
                     maxWidth: 520,
                   }}
                 >

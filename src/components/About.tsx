@@ -42,15 +42,15 @@ export default function About() {
             </div>
 
             <p
-              className="font-semibold leading-snug"
-              style={{ fontSize: "clamp(1.05rem, 2vw, 1.4rem)", color: "var(--text-primary)" }}
+              className="font-semibold leading-snug text-primary"
+              style={{ fontSize: "clamp(1.05rem, 2vw, 1.4rem)" }}
             >
               {PERSONAL.philosophy}
             </p>
             <p
+              className="text-secondary"
               style={{
                 fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
-                color: "var(--text-secondary)",
                 lineHeight: 1.8,
               }}
             >
@@ -59,9 +59,9 @@ export default function About() {
               fintech, AI, and SaaS products — using React, Next.js, TypeScript, and GraphQL.
             </p>
             <p
+              className="text-secondary"
               style={{
                 fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
-                color: "var(--text-secondary)",
                 lineHeight: 1.8,
               }}
             >
@@ -98,29 +98,26 @@ export default function About() {
                 <div className="divider" />
                 <div className="py-7 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
                   <div className="flex-1">
-                    <h4
-                      className="font-semibold transition-colors duration-300"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="font-semibold transition-colors duration-300 text-primary">
                       {exp.role}
                     </h4>
                     <p
+                      className="text-muted"
                       style={{
                         marginTop: 2,
                         fontSize: 11,
                         fontWeight: 600,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "var(--text-muted)",
                       }}
                     >
                       {exp.company}
                     </p>
                     <p
+                      className="text-secondary"
                       style={{
                         marginTop: 12,
                         fontSize: "clamp(0.8rem, 1.4vw, 0.9rem)",
-                        color: "var(--text-secondary)",
                         lineHeight: 1.75,
                       }}
                     >
@@ -128,10 +125,10 @@ export default function About() {
                     </p>
                   </div>
                   <span
+                    className="text-muted"
                     style={{
                       fontSize: 11,
                       fontWeight: 500,
-                      color: "var(--text-muted)",
                       whiteSpace: "nowrap",
                       flexShrink: 0,
                       paddingTop: 2,

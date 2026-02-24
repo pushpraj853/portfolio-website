@@ -9,23 +9,12 @@ export default function Navbar() {
   const { theme, toggle } = useTheme();
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={{
-        background: "var(--navbar-bg)",
-        backdropFilter: "blur(20px) saturate(160%)",
-        WebkitBackdropFilter: "blur(20px) saturate(160%)",
-        borderBottom: "1px solid var(--border)",
-        boxShadow:
-          "0 1px 0 0 color-mix(in srgb, var(--text-primary) 6%, transparent), 0 4px 24px color-mix(in srgb, var(--text-primary) 4%, transparent)",
-      }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 navbar-bar">
       <nav className="max-w-7xl mx-auto px-6 md:px-14 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#home"
-          className="text-sm font-bold tracking-[0.18em] uppercase transition-colors duration-300"
-          style={{ color: "var(--text-primary)" }}
+          className="text-sm font-bold tracking-[0.18em] uppercase transition-colors duration-300 text-primary"
         >
           {PERSONAL.name}
         </a>
@@ -37,10 +26,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-[12px] font-medium tracking-[0.12em] uppercase transition-colors duration-300"
-                  style={{ color: "var(--text-secondary)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
+                  className="text-[12px] font-medium tracking-[0.12em] uppercase transition-colors duration-300 text-secondary hover:text-primary"
                 >
                   {link.label}
                 </a>
@@ -49,15 +35,12 @@ export default function Navbar() {
           </ul>
 
           {/* Separator */}
-          <div className="hidden md:block w-px h-4" style={{ background: "var(--border)" }} />
+          <div className="hidden md:block w-px h-4 bg-border" />
 
           {/* Connect link */}
           <a
             href={`mailto:${PERSONAL.email}`}
-            className="hidden md:block text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300"
-            style={{ color: "var(--text-muted)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text-primary)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+            className="hidden md:block text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors duration-300 text-muted hover:text-primary"
           >
             Connect ↗
           </a>
@@ -66,17 +49,8 @@ export default function Navbar() {
           <motion.button
             onClick={toggle}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="flex items-center justify-center rounded-full transition-colors duration-300"
-            style={{
-              width: 32,
-              height: 32,
-              border: "1px solid var(--border)",
-              background: "var(--surface)",
-              color: "var(--text-muted)",
-              cursor: "pointer",
-            }}
+            className="flex items-center justify-center rounded-full transition-colors duration-300 text-muted hover:text-primary btn-icon"
             whileTap={{ scale: 0.9 }}
-            whileHover={{ borderColor: "var(--border-mid)", color: "var(--text-primary)" }}
           >
             {theme === "dark" ? <SiSunrise /> : <SiDarkreader />}
           </motion.button>

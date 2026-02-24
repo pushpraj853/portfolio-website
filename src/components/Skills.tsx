@@ -58,10 +58,7 @@ export default function Skills() {
                 }}
               >
                 <Icon style={{ color: skill.color, fontSize: 16, flexShrink: 0 }} aria-hidden />
-                <span
-                  className="text-sm font-semibold whitespace-nowrap"
-                  style={{ color: "var(--text-primary)" }}
-                >
+                <span className="text-sm font-semibold whitespace-nowrap text-primary">
                   {skill.name}
                 </span>
               </motion.div>
